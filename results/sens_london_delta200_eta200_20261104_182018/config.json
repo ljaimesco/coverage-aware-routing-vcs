@@ -1,0 +1,64 @@
+{
+  "description": "Sensitivity (delta200_eta200): London, changed {'delta_m': 200, 'eta_m': 200}; pairs with sens_london_base.",
+  "network": "map/london-seg4/data/london-seg4.net.xml",
+  "seed": 20261503,
+  "n_scenarios": 10,
+  "groups": [
+    {
+      "name": "left",
+      "origin_ref": "37878246",
+      "dest_ref": "6548029263",
+      "count": 4
+    },
+    {
+      "name": "right",
+      "origin_ref": "104277486",
+      "dest_ref": "288167137",
+      "count": 10
+    }
+  ],
+  "od_radius_m": 1000,
+  "min_od_m": 2000,
+  "costs": {
+    "type": "lognormal",
+    "mean": 1.0,
+    "sigma": 0.5
+  },
+  "budgets": [
+    5000,
+    15000,
+    35000
+  ],
+  "rho_m": 1000,
+  "sigma": 1.0,
+  "self_term": true,
+  "detour_limit_factor": 1.0,
+  "grid_cell_m": 100,
+  "stage2": {
+    "delta_m": 200,
+    "K": 20,
+    "eta_m": 200,
+    "resample_m": 50
+  },
+  "deviation_rules": [
+    "ldd",
+    "uniform"
+  ],
+  "selection_rules": [
+    "closest",
+    "greedy",
+    "greedy_ls"
+  ],
+  "ilp_max_vars": 200000,
+  "domain": {
+    "type": "road_buffer",
+    "buffer_m": 500
+  },
+  "config_file": "journal/configs/sens_london_delta200_eta200.json",
+  "git_commit": "unknown",
+  "started": "2026-11-04T18:20:18.611008",
+  "numpy": "2.2.6",
+  "n_cells": 5458,
+  "n_box_cells": 5460,
+  "eval_grid_n_cells": {}
+}

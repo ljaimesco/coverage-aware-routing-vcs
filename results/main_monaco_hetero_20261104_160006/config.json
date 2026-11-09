@@ -1,0 +1,66 @@
+{
+  "description": "Main: Monaco (MoST road network), 14 vehicles (4 west + 10 east), lognormal costs (mean 1, sigma 0.5), 20 paired scenarios.",
+  "network": "journal/networks/most.net.xml",
+  "seed": 20261104,
+  "n_scenarios": 20,
+  "groups": [
+    {
+      "name": "west",
+      "origin_ref": "150072",
+      "dest_ref": "151536",
+      "count": 4
+    },
+    {
+      "name": "east",
+      "origin_ref": "cluster_138810_140895",
+      "dest_ref": "134685",
+      "count": 10
+    }
+  ],
+  "od_radius_m": 1000,
+  "min_od_m": 2000,
+  "costs": {
+    "type": "lognormal",
+    "mean": 1.0,
+    "sigma": 0.5
+  },
+  "budgets": [
+    5000,
+    15000,
+    25000,
+    35000
+  ],
+  "rho_m": 1000,
+  "sigma": 1.0,
+  "self_term": true,
+  "detour_limit_factor": 1.0,
+  "grid_cell_m": 100,
+  "stage2": {
+    "delta_m": 100,
+    "K": 20,
+    "eta_m": 100,
+    "resample_m": 50
+  },
+  "deviation_rules": [
+    "ldd",
+    "uniform"
+  ],
+  "selection_rules": [
+    "closest",
+    "random",
+    "greedy",
+    "greedy_ls"
+  ],
+  "ilp_max_vars": 200000,
+  "domain": {
+    "type": "road_buffer",
+    "buffer_m": 500
+  },
+  "config_file": "journal/configs/main_monaco_hetero.json",
+  "git_commit": "unknown",
+  "started": "2026-11-04T16:00:06.016948",
+  "numpy": "2.2.6",
+  "n_cells": 3707,
+  "n_box_cells": 6400,
+  "eval_grid_n_cells": {}
+}

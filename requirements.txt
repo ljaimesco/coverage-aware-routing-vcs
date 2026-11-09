@@ -1,0 +1,8 @@
+# tested with Python 3.13 on Linux
+eclipse-sumo==1.28.0
+sumolib==1.28.0
+numpy>=1.26
+scipy>=1.11
+pandas>=2.0
+numba>=0.60
+pytest>=8

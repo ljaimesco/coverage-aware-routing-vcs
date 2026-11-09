@@ -1,0 +1,66 @@
+{
+  "description": "Exact comparison: 6 vehicles (2 left, 4 right), 400 m grid, K = 8, greedy vs ILP; budgets scaled to the smaller fleet.",
+  "network": "map/london-seg4/data/london-seg4.net.xml",
+  "seed": 20261104,
+  "n_scenarios": 10,
+  "groups": [
+    {
+      "name": "left",
+      "origin_ref": "37878246",
+      "dest_ref": "6548029263",
+      "count": 2
+    },
+    {
+      "name": "right",
+      "origin_ref": "104277486",
+      "dest_ref": "288167137",
+      "count": 4
+    }
+  ],
+  "od_radius_m": 1000,
+  "min_od_m": 2000,
+  "costs": {
+    "type": "lognormal",
+    "mean": 1.0,
+    "sigma": 0.5
+  },
+  "budgets": [
+    1000,
+    3000
+  ],
+  "rho_m": 1000,
+  "sigma": 1.0,
+  "self_term": true,
+  "detour_limit_factor": 1.0,
+  "grid_cell_m": 400,
+  "stage2": {
+    "delta_m": 100,
+    "K": 8,
+    "eta_m": 100,
+    "resample_m": 50
+  },
+  "deviation_rules": [
+    "ldd",
+    "uniform"
+  ],
+  "selection_rules": [
+    "closest",
+    "random",
+    "greedy",
+    "greedy_ls",
+    "ilp"
+  ],
+  "ilp_max_vars": 200000,
+  "domain": {
+    "type": "road_buffer",
+    "buffer_m": 500
+  },
+  "config_file": "journal/configs/ilp_small_london.json",
+  "git_commit": "unknown",
+  "started": "2026-11-08T20:17:52.458499",
+  "numpy": "2.2.6",
+  "resumed_keeping": [],
+  "n_cells": 336,
+  "n_box_cells": 336,
+  "eval_grid_n_cells": {}
+}

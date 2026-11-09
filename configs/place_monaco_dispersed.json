@@ -1,0 +1,53 @@
+{
+  "description": "Placement: Monaco (MoST road network), 14 dispersed vehicles (ends uniform over the largest SCC, straight-line OD 2 to 6 km), lognormal costs, 20 paired scenarios.",
+  "network": "networks/most.net.xml",
+  "seed": 20261304,
+  "n_scenarios": 20,
+  "groups": [
+    {
+      "name": "dispersed",
+      "dispersed": true,
+      "count": 14
+    }
+  ],
+  "od_radius_m": 1000,
+  "min_od_m": 2000,
+  "costs": {
+    "type": "lognormal",
+    "mean": 1.0,
+    "sigma": 0.5
+  },
+  "budgets": [
+    5000,
+    15000,
+    25000,
+    35000
+  ],
+  "rho_m": 1000,
+  "sigma": 1.0,
+  "self_term": true,
+  "detour_limit_factor": 1.0,
+  "grid_cell_m": 100,
+  "stage2": {
+    "delta_m": 100,
+    "K": 20,
+    "eta_m": 100,
+    "resample_m": 50
+  },
+  "deviation_rules": [
+    "ldd",
+    "uniform"
+  ],
+  "selection_rules": [
+    "closest",
+    "random",
+    "greedy",
+    "greedy_ls"
+  ],
+  "ilp_max_vars": 200000,
+  "domain": {
+    "type": "road_buffer",
+    "buffer_m": 500
+  },
+  "max_od_m": 6000
+}

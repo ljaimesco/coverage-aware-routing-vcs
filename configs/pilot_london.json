@@ -1,0 +1,58 @@
+{
+  "description": "Pilot: London segment, 14 vehicles in two groups (4 left, 10 right) as in ICCVE 2022; 2x2 ablation plus random and shortest baselines.",
+  "network": "networks/london-seg4.net.xml.gz",
+  "seed": 20261102,
+  "n_scenarios": 3,
+  "groups": [
+    {
+      "name": "left",
+      "origin_ref": "37878246",
+      "dest_ref": "6548029263",
+      "count": 4
+    },
+    {
+      "name": "right",
+      "origin_ref": "104277486",
+      "dest_ref": "288167137",
+      "count": 10
+    }
+  ],
+  "od_radius_m": 1000,
+  "min_od_m": 2000,
+  "costs": {
+    "type": "equal",
+    "value": 1.0
+  },
+  "budgets": [
+    5000,
+    15000,
+    25000,
+    35000
+  ],
+  "rho_m": 1000,
+  "sigma": 1.0,
+  "self_term": true,
+  "detour_limit_factor": 1.0,
+  "grid_cell_m": 100,
+  "stage2": {
+    "delta_m": 100,
+    "K": 20,
+    "eta_m": 100,
+    "resample_m": 50
+  },
+  "deviation_rules": [
+    "ldd",
+    "uniform"
+  ],
+  "selection_rules": [
+    "closest",
+    "random",
+    "greedy",
+    "greedy_ls"
+  ],
+  "ilp_max_vars": 200000,
+  "domain": {
+    "type": "road_buffer",
+    "buffer_m": 500
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "description": "Main: Monaco (MoST road network), 14 vehicles (4 west + 10 east), equal costs, 20 paired scenarios.",
+  "network": "networks/most.net.xml",
+  "seed": 20261104,
+  "n_scenarios": 20,
+  "groups": [
+    {
+      "name": "west",
+      "origin_ref": "150072",
+      "dest_ref": "151536",
+      "count": 4
+    },
+    {
+      "name": "east",
+      "origin_ref": "cluster_138810_140895",
+      "dest_ref": "134685",
+      "count": 10
+    }
+  ],
+  "od_radius_m": 1000,
+  "min_od_m": 2000,
+  "costs": {
+    "type": "equal",
+    "value": 1.0
+  },
+  "budgets": [
+    5000,
+    15000,
+    25000,
+    35000
+  ],
+  "rho_m": 1000,
+  "sigma": 1.0,
+  "self_term": true,
+  "detour_limit_factor": 1.0,
+  "grid_cell_m": 100,
+  "stage2": {
+    "delta_m": 100,
+    "K": 20,
+    "eta_m": 100,
+    "resample_m": 50
+  },
+  "deviation_rules": [
+    "ldd",
+    "uniform"
+  ],
+  "selection_rules": [
+    "closest",
+    "random",
+    "greedy",
+    "greedy_ls"
+  ],
+  "ilp_max_vars": 200000,
+  "domain": {
+    "type": "road_buffer",
+    "buffer_m": 500
+  }
+}
